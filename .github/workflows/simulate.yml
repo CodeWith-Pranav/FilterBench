@@ -1,0 +1,25 @@
+name: Analog simulation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: sudo apt-get update && sudo apt-get install -y ngspice
+      - run: python3 simulate.py
+      - run: node test-model.mjs && node build.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: analog-simulation-evidence
+          path: |
+            report.json
+            *.csv
+            verification.txt
+            ngspice.log
