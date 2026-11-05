@@ -1,0 +1,29 @@
+PASS: complex AC vs equations
+PASS: noise density vs independent noise budget
+PASS: final step level
+PASS: step overshoot bound
+PASS: ideal repeated-pole cutoff
+PASS: step at one RC constant
+PASS: 128 actual-SPICE tolerance runs
+{
+  "gain_v_v": 1.9999392118572394,
+  "gain_db": 6.020335909717871,
+  "cutoff_hz": 1024.2287319173092,
+  "ideal_cutoff_hz": 1024.3120669545892,
+  "output_noise_rms_v_1hz_1mhz": 2.5468795931350295e-05,
+  "step_final_v": 0.19999400014,
+  "settling_1pct_s": 0.0006657784167850001
+}
+{
+  "samples": 128,
+  "seed": 17,
+  "distribution": "independent uniform",
+  "r_percent": 1,
+  "c_percent": 5,
+  "cutoff_min_hz": 977.6932969758559,
+  "cutoff_max_hz": 1075.9866368250146,
+  "cutoff_mean_hz": 1025.390172451995,
+  "cutoff_stdev_hz": 19.894929809649742,
+  "cutoff_p05_hz": 994.1881695151926,
+  "cutoff_p95_hz": 1055.839089266144
+}

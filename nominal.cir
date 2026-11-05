@@ -1,0 +1,38 @@
+FilterBench: buffered RC low-pass and noninverting gain stage
+.temp 27
+.options numdgt=12
+.param A0=100000 GBW=3000000 RN=6032.792367183
+.subckt OP plus minus out
+Rwhite white 0 {RN}
+Eadd noisy plus white 0 1
+Eopen drive 0 noisy minus {A0}
+Rdom drive pole 1k noisy=0
+Cdom pole 0 {A0/(6.283185307179586*GBW*1000)}
+Eout out 0 pole 0 1
+.ends OP
+VIN in 0 DC 0 AC 1 PWL(0 0 0.9999m 0 1m 0.1 5m 0.1)
+R1 in n1 10000
+C1 n1 0 1e-08
+XU1 n1 b1 b1 OP
+R2 b1 n2 10000
+C2 n2 0 1e-08
+XU2 n2 fb out OP
+RF out fb 10000
+RG fb 0 10000
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+set numdgt=12
+ac dec 80 1 1Meg
+let re_out = real(v(out))
+let im_out = imag(v(out))
+wrdata ac.txt re_out im_out
+tran 2u 5m 0 2u
+wrdata step.txt v(in) v(out)
+noise v(out) VIN dec 80 1 1Meg
+setplot noise1
+wrdata noise.txt onoise_spectrum inoise_spectrum
+quit
+.endc
+.end

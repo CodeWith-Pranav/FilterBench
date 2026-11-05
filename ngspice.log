@@ -1,0 +1,50 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: filterbench: buffered rc low-pass and noninverting gain stage
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 481
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+in                                           0
+n1                                           0
+xu1.white                                    0
+xu1.noisy                                    0
+xu1.drive                                    0
+b1                                           0
+xu1.pole                                     0
+n2                                           0
+xu2.white                                    0
+xu2.noisy                                    0
+xu2.drive                                    0
+fb                                           0
+xu2.pole                                     0
+out                                          0
+e.xu2.eout#branch                            0
+e.xu2.eopen#branch                           0
+e.xu2.eadd#branch                            0
+e.xu1.eout#branch                            0
+e.xu1.eopen#branch                           0
+e.xu1.eadd#branch                            0
+vin#branch                                   0
+
+
+No. of Data Rows : 2523
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 481
+
+No. of Data Rows : 1
+ngspice-39 done
+Note: can't find the initialization file spinit.

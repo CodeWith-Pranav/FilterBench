@@ -1,0 +1,6 @@
+build/
+public/
+__pycache__/
+ac.txt
+noise.txt
+step.txt
