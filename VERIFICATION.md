@@ -32,3 +32,12 @@ No FPGA work, transistor-level device design, physical implementation, PCB paras
 ## Primary reference
 
 Official ngspice user manual: https://ngspice.sourceforge.io/docs/ngspice-manual.pdf — circuit elements, dependent sources, resistor noise, AC/transient/noise analyses, and control-language data export. Consult the manual matching your installed engine version; the online development manual may be newer. No source passages or vendor netlists were copied into this project.
+
+## Publication and browser checks
+
+Live site: https://filterbench.vercel.app/
+Public source: https://github.com/CodeWith-Pranav/FilterBench
+
+CI setup checkpoint 0849ea7: GitHub Actions run 41965209900 completed successfully, rerunning nominal and 128 tolerance SPICE runs, JavaScript agreement checks and static build. Final documentation edits receive normal subsequent CI runs.
+
+Live browser checks: recorded report loading, resistance scaling (20 kΩ gives about 512.2 Hz), phase switching, nominal reset, and custom parameters 20 kΩ/22 nF/gain 5/GBW 0.3 MHz. JSON download parsed with the expected parameters. Custom netlist download was run in ngspice; its 481 complex AC points agreed with independent equations to about 4.05e-12 relative error. Its interpolated cutoff was 232.767 Hz versus analytic bisection 232.795 Hz; the sampling/interpolation difference is expected. Details in export-check.txt.

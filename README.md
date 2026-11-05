@@ -1,5 +1,7 @@
 # FilterBench
 
+[Live Vercel lab](https://filterbench.vercel.app/) · [Public source](https://github.com/CodeWith-Pranav/FilterBench) · [Simulation checks](https://github.com/CodeWith-Pranav/FilterBench/actions)
+
 Analog signal-conditioning project: two buffered RC low-pass sections followed by a noninverting gain stage. Includes actual ngspice frequency, transient and noise analyses; 128 component-tolerance runs; independent mathematical checks; and an interactive browser teaching lab.
 
 ![Actual simulation evidence](evidence.png)
@@ -15,7 +17,7 @@ make simulate
 make test
 ```
 
-`make simulate` runs nominal AC, transient and noise analyses plus 128 actual ngspice AC tolerance runs. It creates the report, CSVs, netlist, log and verification record. `make test` requires Node.js 22 or newer and compares the browser model against that actual report. On macOS, install `ngspice`, `node` and `python` using Homebrew. The recorded local engine was ngspice-39 on Linux; CI checks the Ubuntu-provided engine.
+`make simulate` runs nominal AC, transient and noise analyses plus 128 actual ngspice AC tolerance runs. It creates the report, CSVs, netlist, log and verification record. Install Node.js 22 or newer from https://nodejs.org/en/download before running the JavaScript checks. `make test` requires Node.js 22 or newer and compares the browser model against that actual report. On macOS, install `ngspice`, `node` and `python` using Homebrew. The recorded local engine was ngspice-39 on Linux; CI checks the Ubuntu-provided engine.
 
 Optional evidence figure regeneration:
 

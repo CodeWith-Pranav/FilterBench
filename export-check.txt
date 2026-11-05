@@ -1,0 +1,4 @@
+PASS browser-generated custom netlist ran in ngspice.
+R1=R2=20kohm; C1=C2=22nF; gain target 5; GBW=0.3MHz.
+481 complex AC points match independent circuit equations; max relative error 4.04885e-12.
+Recorded gain and cutoff: (4.999661802264231, 232.76688095939966)
